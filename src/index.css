@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   Guía de Estilos — Seguros Bolívar
+   Plataforma Unificada Patrimoniales
+   ============================================ */
+
+@layer base {
+  :root {
+    /* Verde Bolívar — Primary */
+    --color-bolivar-500: #00A651;
+    --color-bolivar-600: #008C44;
+    --color-bolivar-700: #007A3D;
+    --color-bolivar-50: #E6F7ED;
+
+    /* Surfaces */
+    --color-surface: #FFFFFF;
+    --color-surface-secondary: #F8FAFB;
+
+    /* Content */
+    --color-content-primary: #1F2937;
+    --color-content-secondary: #6B7280;
+
+    /* Borders */
+    --color-border: #E5E7EB;
+
+    /* Spacing */
+    --spacing-page: 1.5rem;
+    --spacing-section: 1.5rem;
+    --spacing-card: 1.5rem;
+
+    /* Radius */
+    --radius-card: 8px;
+    --radius-button: 8px;
+    --radius-badge: 9999px;
+  }
+
+  body {
+    @apply bg-surface-secondary text-content-primary font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-content-primary;
+  }
+}
+
+@layer components {
+  /* Card base */
+  .card {
+    @apply bg-white rounded-[8px] shadow-card p-6 border border-border;
+  }
+
+  .card:hover {
+    @apply shadow-card-hover transition-shadow duration-200;
+  }
+
+  /* Button variants */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 
+           bg-bolivar-500 text-white font-medium rounded-[8px]
+           hover:bg-bolivar-700 transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-bolivar-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2
+           border border-border text-content-primary font-medium rounded-[8px]
+           hover:bg-surface-tertiary transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-bolivar-500 focus:ring-offset-2;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full
+           text-xs font-medium bg-bolivar-50 text-bolivar-700;
+  }
+
+  /* Tab navigation */
+  .tab-active {
+    @apply border-b-2 border-bolivar-500 text-bolivar-500 font-medium pb-3;
+  }
+
+  .tab-inactive {
+    @apply border-b-2 border-transparent text-content-secondary 
+           hover:text-content-primary hover:border-border pb-3 transition-colors;
+  }
+}
