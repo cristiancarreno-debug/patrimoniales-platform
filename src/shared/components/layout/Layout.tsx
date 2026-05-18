@@ -14,7 +14,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-surface-secondary">
       <Navbar />
-      <main className="flex-1 w-full max-w-[1440px] mx-auto px-6 py-6">
+      <main className="flex-1 w-full px-6 py-6">
         {children}
       </main>
       <Footer />

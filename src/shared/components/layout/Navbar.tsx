@@ -22,7 +22,7 @@ const NAV_ITEMS = [
 export function Navbar() {
   return (
     <header className="bg-white border-b border-border shadow-navbar sticky top-0 z-50">
-      <div className="w-full max-w-[1440px] mx-auto px-6">
+        <div className="w-full px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo y título */}
           <div className="flex items-center gap-3">
@@ -31,7 +31,7 @@ export function Navbar() {
             </div>
             <div>
               <h1 className="text-base font-semibold text-content-primary leading-tight">
-                Patrimoniales
+                Gerencia Portafolio
               </h1>
               <p className="text-xs text-content-secondary leading-tight">
                 Seguros Bolívar

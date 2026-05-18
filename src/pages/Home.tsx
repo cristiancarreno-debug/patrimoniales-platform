@@ -11,10 +11,9 @@ const MODULES = [
   {
     to: '/informes',
     title: 'Informe Proyectos y EO',
-    description: 'Reportes ejecutivos de proyectos y estado operativo de la tribu.',
+    description: 'Reportes ejecutivos de proyectos y estado operativo.',
     icon: BarChart3,
     color: 'bg-blue-50 text-blue-600',
-    owner: 'Marcela Duarte',
   },
   {
     to: '/equipos',
@@ -22,7 +21,6 @@ const MODULES = [
     description: 'Seguimiento de capacidad, asignaciones y métricas de equipo.',
     icon: Users,
     color: 'bg-purple-50 text-purple-600',
-    owner: 'Cristian Carreño',
   },
   {
     to: '/incidencias',
@@ -30,7 +28,6 @@ const MODULES = [
     description: 'Dashboard de incidencias por producto, tribu y squad con métricas de resolución.',
     icon: AlertTriangle,
     color: 'bg-amber-50 text-amber-600',
-    owner: 'Cristian Carreño',
   },
   {
     to: '/costos-aws',
@@ -38,12 +35,11 @@ const MODULES = [
     description: 'Monitoreo de costos de infraestructura AWS por servicio y ambiente.',
     icon: DollarSign,
     color: 'bg-emerald-50 text-emerald-600',
-    owner: 'Estefhanía Osorio',
   },
 ] as const;
 
 /**
- * Página de inicio con acceso a los 4 módulos de la plataforma.
+ * Página de inicio — Centro de Mando Portafolio.
  */
 export default function Home() {
   return (
@@ -51,17 +47,17 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center py-8">
         <h1 className="text-3xl font-bold text-content-primary mb-3">
-          Plataforma Patrimoniales
+          Centro de Mando Portafolio de Proyectos y Excelencia Operativa
         </h1>
-        <p className="text-content-secondary max-w-2xl mx-auto">
-          Centro unificado de gestión para la Tribu Patrimoniales.
+        <p className="text-content-secondary max-w-3xl mx-auto">
+          Centro unificado de gestión para los proyectos y excelencia operativa.
           Acceda a informes, métricas de equipo, incidencias y costos de infraestructura.
         </p>
       </section>
 
       {/* Grid de módulos */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {MODULES.map(({ to, title, description, icon: Icon, color, owner }) => (
+        {MODULES.map(({ to, title, description, icon: Icon, color }) => (
           <Link
             key={to}
             to={to}
@@ -78,10 +74,7 @@ export default function Home() {
                 <p className="text-sm text-content-secondary mt-1">
                   {description}
                 </p>
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-xs text-content-tertiary">
-                    Owner: {owner}
-                  </span>
+                <div className="flex items-center justify-end mt-4">
                   <ArrowRight
                     size={16}
                     className="text-content-tertiary group-hover:text-bolivar-500 group-hover:translate-x-1 transition-all"
