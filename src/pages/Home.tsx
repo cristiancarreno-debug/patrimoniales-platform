@@ -36,6 +36,13 @@ const MODULES = [
     icon: DollarSign,
     color: 'bg-emerald-50 text-emerald-600',
   },
+  {
+    to: '/equipo',
+    title: 'Equipo',
+    description: 'Resumen de asignaciones y dedicaciones por integrante del equipo.',
+    icon: Users,
+    color: 'bg-indigo-50 text-indigo-600',
+  },
 ] as const;
 
 /**

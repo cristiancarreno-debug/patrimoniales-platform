@@ -13,6 +13,7 @@ const NAV_ITEMS = [
   { to: '/equipos', label: 'Tablero Jira', icon: Users, exact: false },
   { to: '/incidencias', label: 'Incidencias', icon: AlertTriangle, exact: false },
   { to: '/costos-aws', label: 'Costos AWS', icon: DollarSign, exact: false },
+  { to: '/equipo', label: 'Equipo', icon: Users, exact: false },
 ] as const;
 
 /**

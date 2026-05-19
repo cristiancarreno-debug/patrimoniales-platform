@@ -10,6 +10,7 @@ const Informes = lazy(() => import('@/modules/informes'));
 const Equipos = lazy(() => import('@/modules/equipos'));
 const Incidencias = lazy(() => import('@/modules/incidencias'));
 const CostosAws = lazy(() => import('@/modules/costos-aws'));
+const Equipo = lazy(() => import('@/modules/equipo'));
 
 /**
  * Aplicación principal — Plataforma Unificada Patrimoniales.
@@ -27,6 +28,7 @@ export function App() {
             <Route path="/equipos" element={<Equipos />} />
             <Route path="/incidencias" element={<Incidencias />} />
             <Route path="/costos-aws" element={<CostosAws />} />
+            <Route path="/equipo" element={<Equipo />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
