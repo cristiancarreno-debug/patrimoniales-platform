@@ -10,7 +10,7 @@ import {
 const NAV_ITEMS = [
   { to: '/', label: 'Inicio', icon: Home, exact: true },
   { to: '/informes', label: 'Informes', icon: BarChart3, exact: false },
-  { to: '/equipos', label: 'Equipos', icon: Users, exact: false },
+  { to: '/equipos', label: 'Tablero Jira', icon: Users, exact: false },
   { to: '/incidencias', label: 'Incidencias', icon: AlertTriangle, exact: false },
   { to: '/costos-aws', label: 'Costos AWS', icon: DollarSign, exact: false },
 ] as const;

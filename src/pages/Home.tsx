@@ -17,7 +17,7 @@ const MODULES = [
   },
   {
     to: '/equipos',
-    title: 'Gestión de Equipos',
+    title: 'Gestión de Tablero de Jira',
     description: 'Seguimiento de capacidad, asignaciones y métricas de equipo.',
     icon: Users,
     color: 'bg-purple-50 text-purple-600',
