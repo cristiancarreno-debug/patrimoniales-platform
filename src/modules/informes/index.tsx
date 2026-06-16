@@ -6,7 +6,7 @@ import { ModuleIframe } from '@/shared/components/common/ModuleIframe';
  *
  * URL pendiente de configurar cuando el deploy esté listo.
  */
-const DEPLOY_URL = '';
+const DEPLOY_URL = 'https://web-production-42a26.up.railway.app/';
 
 export default function InformesModule() {
   if (!DEPLOY_URL) {
