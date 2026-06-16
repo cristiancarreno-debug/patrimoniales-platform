@@ -5,15 +5,28 @@ import {
   AlertTriangle,
   DollarSign,
   ArrowRight,
+  ExternalLink,
 } from 'lucide-react';
 
-const MODULES = [
+const INFORMES_EXTERNAL_URL = 'https://web-production-42a26.up.railway.app/';
+
+interface ModuleItem {
+  to: string;
+  title: string;
+  description: string;
+  icon: typeof BarChart3;
+  color: string;
+  external: boolean;
+}
+
+const MODULES: ModuleItem[] = [
   {
-    to: '/informes',
+    to: INFORMES_EXTERNAL_URL,
     title: 'Informe Proyectos y EO',
     description: 'Reportes ejecutivos de proyectos y estado operativo.',
     icon: BarChart3,
     color: 'bg-blue-50 text-blue-600',
+    external: true,
   },
   {
     to: '/equipos',
@@ -21,6 +34,7 @@ const MODULES = [
     description: 'Seguimiento de capacidad, asignaciones y métricas de equipo.',
     icon: Users,
     color: 'bg-purple-50 text-purple-600',
+    external: false,
   },
   {
     to: '/incidencias',
@@ -28,6 +42,7 @@ const MODULES = [
     description: 'Dashboard de incidencias por producto, tribu y squad con métricas de resolución.',
     icon: AlertTriangle,
     color: 'bg-amber-50 text-amber-600',
+    external: false,
   },
   {
     to: '/costos-aws',
@@ -35,6 +50,7 @@ const MODULES = [
     description: 'Monitoreo de costos de infraestructura AWS por servicio y ambiente.',
     icon: DollarSign,
     color: 'bg-emerald-50 text-emerald-600',
+    external: false,
   },
   {
     to: '/equipo',
@@ -42,8 +58,9 @@ const MODULES = [
     description: 'Resumen de asignaciones y dedicaciones por integrante del equipo.',
     icon: Users,
     color: 'bg-indigo-50 text-indigo-600',
+    external: false,
   },
-] as const;
+];
 
 /**
  * Página de inicio — Centro de Mando Portafolio.
@@ -64,12 +81,8 @@ export default function Home() {
 
       {/* Grid de módulos */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {MODULES.map(({ to, title, description, icon: Icon, color }) => (
-          <Link
-            key={to}
-            to={to}
-            className="card group hover:border-bolivar-500/30 transition-all duration-200"
-          >
+        {MODULES.map(({ to, title, description, icon: Icon, color, external }) => {
+          const content = (
             <div className="flex items-start gap-4">
               <div className={`p-3 rounded-lg ${color}`}>
                 <Icon size={24} />
@@ -82,15 +95,46 @@ export default function Home() {
                   {description}
                 </p>
                 <div className="flex items-center justify-end mt-4">
-                  <ArrowRight
-                    size={16}
-                    className="text-content-tertiary group-hover:text-bolivar-500 group-hover:translate-x-1 transition-all"
-                  />
+                  {external ? (
+                    <ExternalLink
+                      size={16}
+                      className="text-content-tertiary group-hover:text-bolivar-500 transition-all"
+                    />
+                  ) : (
+                    <ArrowRight
+                      size={16}
+                      className="text-content-tertiary group-hover:text-bolivar-500 group-hover:translate-x-1 transition-all"
+                    />
+                  )}
                 </div>
               </div>
             </div>
-          </Link>
-        ))}
+          );
+
+          if (external) {
+            return (
+              <a
+                key={to}
+                href={to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card group hover:border-bolivar-500/30 transition-all duration-200"
+              >
+                {content}
+              </a>
+            );
+          }
+
+          return (
+            <Link
+              key={to}
+              to={to}
+              className="card group hover:border-bolivar-500/30 transition-all duration-200"
+            >
+              {content}
+            </Link>
+          );
+        })}
       </section>
 
       {/* Info */}

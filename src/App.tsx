@@ -6,7 +6,6 @@ import { LoadingSpinner } from '@/shared/components/common/LoadingSpinner';
 
 /** Módulos cargados con lazy loading (code-splitting automático) */
 const Home = lazy(() => import('@/pages/Home'));
-const Informes = lazy(() => import('@/modules/informes'));
 const Equipos = lazy(() => import('@/modules/equipos'));
 const Incidencias = lazy(() => import('@/modules/incidencias'));
 const CostosAws = lazy(() => import('@/modules/costos-aws'));
@@ -24,7 +23,6 @@ export function App() {
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/informes" element={<Informes />} />
             <Route path="/equipos" element={<Equipos />} />
             <Route path="/incidencias" element={<Incidencias />} />
             <Route path="/costos-aws" element={<CostosAws />} />

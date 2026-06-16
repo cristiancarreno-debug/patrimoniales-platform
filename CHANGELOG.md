@@ -12,6 +12,7 @@ y este proyecto adhiere a [Versionamiento Semántico](https://semver.org/lang/es
 
 ### Cambiado
 - Se cambió módulo "Informe Proyectos y EO" de iframe a enlace externo (nueva pestaña) por restricción X-Frame-Options del servidor Railway
+- Se refactorizó navegación: clic en card de Home y tab del navbar abren directamente la URL de Railway en pestaña nueva (sin ruta interna /informes)
 - Se creó preset corporativo Tailwind (`src/shared/config/tailwind.preset.ts`) con paleta Seguros Bolívar, tipografía Inter, border-radius y sombras estándar
 - Se creó componente genérico `DataTable<T>` (`src/shared/components/ui/DataTable.tsx`) con ordenamiento por columna, paginación y soporte responsive
 - Se creó componente `StatCard` y `StatCardGrid` (`src/shared/components/ui/StatCard.tsx`) con soporte de colores, iconos y tendencias
